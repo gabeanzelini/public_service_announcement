@@ -10,5 +10,6 @@ class PsaTest < ActiveSupport::TestCase
     Factory(:psa)
     Factory(:lapsed_psa)
     assert_equal(1, Psa.active.count)
+    assert_equal(1, Psa.lapsed.count)
   end
 end
