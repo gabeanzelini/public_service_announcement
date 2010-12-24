@@ -5,7 +5,7 @@ module PsaHelper
   
   module InstanceMethods
     def public_service_announcements
-      psas = Psa.all.select { |psa| 
+      psas = Psa.active.all.select { |psa| 
           #filter based on max views
           request.session["psa_#{psa.id}"].nil? || 
           psa.max_views.nil? || 
