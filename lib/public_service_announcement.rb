@@ -1,0 +1,1 @@
+require 'public_service_announcement/engine'
