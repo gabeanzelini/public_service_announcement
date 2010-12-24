@@ -7,6 +7,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<ul>
+		<% public_service_announcements.each do |psa| %>
+		<li><%= psa.message %></li>
+		<% end %>
+	</ul>
 
 <%= yield %>
 
