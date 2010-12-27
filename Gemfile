@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gem "rails", "3.0.3"
 gem "inherited_resources"
+gem "simple_form"
 
 group :test do 
 	gem "capybara", ">= 0.4.0"

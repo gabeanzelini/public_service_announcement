@@ -1,0 +1,28 @@
+<%= link_to "New", new_psa_path %>
+
+<table>
+	<thead>
+		<tr>
+			<th>Message</th>
+			<th>Max Views</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Route</th>
+			<th>User Agent</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @psas.each do |psa| %>
+		<tr>
+			<td><%= psa.message %></td>
+			<td><%= psa.max_views %></td>
+			<td><%= psa.start_date %></td>
+			<td><%= psa.end_date %></td>
+			<td><%= psa.route %></td>
+			<td><%= psa.user_agent %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to "New", new_psa_path %>
