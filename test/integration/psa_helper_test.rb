@@ -13,9 +13,9 @@ class PsaHelperTest < ActiveSupport::IntegrationCase
   
   test "should expire after viewing it 5 times" do
     psa = Factory(:psa_with_max_views, :max_views => 5)
-    5.times do 
+    5.times do |i|
       visit root_path
-      assert_match(/#{psa.message}/, page.body)
+      assert_match(/#{psa.message}/, page.body, "should show up on the #{(i+1).ordinalize} viewing")
     end
     visit root_path
     assert_no_match(/#{psa.message}/, page.body)
