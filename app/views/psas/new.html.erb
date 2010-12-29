@@ -1,5 +1,9 @@
 <% simple_form_for(@psa) do |f| %>
 	<%= f.input :message %>
 	<%= f.input :start_date %>
+	<%= f.input :end_date %>
+	<%= f.input :max_views %>
+	<%= f.input :route, :default => '/' %>
+	<%= f.input :user_agent %>
 	<%= f.submit 'Save' %>
 <% end %>
