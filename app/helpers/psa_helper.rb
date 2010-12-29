@@ -9,7 +9,7 @@ module PsaHelper
           #filter based on max views
           request.session["psa_#{psa.id}"].nil? || 
           psa.max_views.nil? || 
-          request.session["psa_#{psa.id}"] <= psa.max_views 
+          request.session["psa_#{psa.id}"] < psa.max_views 
         }.select { |psa| 
           #filter based on route
           psa.route.nil? || 
