@@ -12,6 +12,8 @@ class NavigationTest < ActiveSupport::IntegrationCase
     click_link "New"
     fill_in "Message", :with => "This is a test."
     click_button "Save"
-    assert_equal(psas_path, current_path)
+    assert_equal(psas_path, current_path, "new should redirect to index")
+    visit root_path
+    assert_match(/This is a test/, page.body, "new message should show up")
   end
 end
