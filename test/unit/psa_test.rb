@@ -17,4 +17,9 @@ class PsaTest < ActiveSupport::TestCase
     psa = Factory(:psa_with_route, :route => '/test')    
     assert_equal('^/test$', psa.route)
   end
+  
+  test "setting route to empty should result in nil value" do
+    psa = Factory(:psa_with_route, :route => '')
+    assert_equal(nil, psa.route)
+  end
 end

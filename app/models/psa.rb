@@ -4,9 +4,15 @@ class Psa < ActiveRecord::Base
   
   
   def route=(val)
-    unless val =~ /^\^/ || val =~ /\$$/
+    unless val.nil? || val.empty? || val =~ /^\^/ || val =~ /\$$/
       val = "^#{val}$"
     end
+    val = nil if val.empty?
     write_attribute :route, val
+  end
+  
+  def user_agent=(val)
+    val = nil if val.empty?
+    write_attribute :user_agent, val    
   end
 end
