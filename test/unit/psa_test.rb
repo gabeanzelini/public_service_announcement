@@ -12,4 +12,9 @@ class PsaTest < ActiveSupport::TestCase
     assert_equal(1, Psa.active.count)
     assert_equal(1, Psa.lapsed.count)
   end
+  
+  test "route should be assumed to be absolute" do
+    psa = Factory(:psa_with_route, :route => '/test')    
+    assert_equal('^/test$', psa.route)
+  end
 end
