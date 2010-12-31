@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.add_dependency "simple_form"        
   s.files = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 end

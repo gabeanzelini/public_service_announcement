@@ -1,8 +1,11 @@
+<p>Showing <strong><%= @status || 'active' %></strong> announcements. Show <%= @status == "lapsed" ? link_to('active',psas_path) : link_to('lapsed', lapsed_psas_path) %> announcements.</p>
+
 <%= link_to "New", new_psa_path %>
 
-<table>
+<table id="psas">
 	<thead>
 		<tr>
+			<th></th>
 			<th>Message</th>
 			<th>Max Views</th>
 			<th>Start Date</th>
@@ -13,7 +16,8 @@
 	</thead>
 	<tbody>
 		<% @psas.each do |psa| %>
-		<tr>
+		<tr class="<%= cycle('odd','even') %>">
+			<td><%= link_to "Delete", psa, :method => :delete %> | <%= link_to "Edit", edit_psa_path(psa) %></td>
 			<td><%= psa.message %></td>
 			<td><%= psa.max_views %></td>
 			<td><%= psa.start_date %></td>

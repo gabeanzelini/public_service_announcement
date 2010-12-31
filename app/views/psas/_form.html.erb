@@ -1,0 +1,9 @@
+<%= simple_form_for(@psa) do |f| %>
+	<%= f.input :message %>
+	<%= f.input :start_date %>
+	<%= f.input :end_date, :default => DateTime.now + 10.years, :start_year => Date.today.year - 1 %>
+	<%= f.input :max_views %>
+	<%= f.input :route %>
+	<%= f.input :user_agent %>
+	<%= f.submit 'Save' %>
+<%- end %>

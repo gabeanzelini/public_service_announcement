@@ -5,6 +5,7 @@ class ActionController::Base
   protected
   
   def public_service_announcements
+    return [] if request.url =~ /^#{psas_url}/
     psas = Psa.active.all.select { |psa| 
         #filter based on max views
         request.session["psa_#{psa.id}"].nil? || 
