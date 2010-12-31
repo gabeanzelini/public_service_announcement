@@ -15,4 +15,8 @@ class Psa < ActiveRecord::Base
     val = nil if val.empty?
     write_attribute :user_agent, val    
   end
+  
+  def to_s
+    message
+  end
 end
